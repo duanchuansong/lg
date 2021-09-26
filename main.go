@@ -20,6 +20,8 @@ func main() {
 
 	httpServer := server.StartHttpServer(s)
 
+	server.StartStaticServer()
+
 	go func() {
 		// 服务连接
 		if err := httpServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
