@@ -7,8 +7,9 @@ import (
 )
 
 type Config struct {
-	Mysql *db.Mysql
-	Http  *web.Http
+	Mysql  *db.Mysql
+	Http   *web.Http
+	Static *web.Static
 }
 
 func New() *Config {
@@ -24,6 +25,10 @@ func New() *Config {
 		Http: &web.Http{
 			Port:  config.GetString("http.port"),
 			Debug: config.GetBool("http.debug"),
+		},
+		Static: &web.Static{
+			Port: config.GetString("static.port"),
+			Dir:  config.GetString("static.dir"),
 		},
 	}
 }

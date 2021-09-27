@@ -15,12 +15,12 @@ import (
 
 func main() {
 	xlog.Init()
-	config := config.New()
-	s := service.New(config)
+	cfg := config.New()
+	s := service.New(cfg)
 
 	httpServer := server.StartHttpServer(s)
 
-	server.StartStaticServer()
+	go server.StartStaticServer(cfg.Static)
 
 	go func() {
 		// 服务连接

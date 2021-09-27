@@ -6,5 +6,9 @@ username = "root"
 password = "admin123"
 
 [http]
-port = ":8020"
+port = ":8050"
 debug = true
+
+[static]
+port = ":8083"
+dir = "./web/"

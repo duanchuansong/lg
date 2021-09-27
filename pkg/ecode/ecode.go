@@ -20,7 +20,7 @@ func Add(code int) Error {
 }
 
 func New(code int, msg string) Error {
-	errorMap.Store(code, msg)
+	ErrorMap.Store(code, msg)
 	return Error(code)
 }
 
@@ -28,7 +28,7 @@ func New(code int, msg string) Error {
 type Error int
 
 func (e Error) Error() string {
-	if msg, ok := errorMap.Load(e.Code()); ok {
+	if msg, ok := ErrorMap.Load(e.Code()); ok {
 		return msg.(string)
 	}
 	return strconv.Itoa(int(e))
@@ -39,7 +39,7 @@ func (e Error) Code() int { return int(e) }
 
 // Message return error message
 func (e Error) Message() string {
-	if msg, ok := errorMap.Load(e.Code()); ok {
+	if msg, ok := ErrorMap.Load(e.Code()); ok {
 		return msg.(string)
 	}
 	return e.Error()

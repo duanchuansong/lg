@@ -1,19 +1,15 @@
 package server
 
 import (
-	"flag"
-	"log"
 	"net/http"
+	"zj/pkg/web"
+	"zj/pkg/xlog"
 )
 
-var (
-	listen = flag.String("listen", ":8083", "listen address")
-	dir    = "./web/"
-)
-
-func StartStaticServer() {
-	flag.Parse()
-	log.Printf("listening on %q...", *listen)
-	err := http.ListenAndServe(*listen, http.FileServer(http.Dir(dir)))
-	log.Fatalln(err)
+func StartStaticServer(cfg *web.Static) {
+	xlog.Infof("listening on %s,path:%s", cfg.Port, cfg.Dir)
+	err := http.ListenAndServe(cfg.Port, http.FileServer(http.Dir(cfg.Dir)))
+	if err != nil {
+		xlog.Errorf("http.ListenAndServe(%s, http.FileServer(http.Dir(%s))),err:%v", cfg.Port, cfg.Dir, err)
+	}
 }
