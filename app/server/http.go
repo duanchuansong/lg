@@ -1,11 +1,11 @@
 package server
 
 import (
+	"github.com/duanchuansong/stk/web"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"zj/app/api"
 	"zj/app/service"
-	"zj/pkg/web"
 )
 
 var srv *service.Service

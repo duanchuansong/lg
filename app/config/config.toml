@@ -4,6 +4,8 @@ port = ":3306"
 dbname = "zj"
 username = "root"
 password = "admin123"
+maxIdleConns = 10
+maxOpenConns = 100
 
 [http]
 port = ":8050"

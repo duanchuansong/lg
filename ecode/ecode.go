@@ -1,6 +1,6 @@
 package ecode
 
-import "zj/pkg/ecode"
+import "github.com/duanchuansong/stk/ecode"
 
 var (
 	OK           = ecode.New(1, "success")

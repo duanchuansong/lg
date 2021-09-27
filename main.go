@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"github.com/duanchuansong/stk/xlog"
 	"log"
 	"net/http"
 	"os"
@@ -10,7 +11,6 @@ import (
 	"zj/app/config"
 	"zj/app/server"
 	"zj/app/service"
-	"zj/pkg/xlog"
 )
 
 func main() {

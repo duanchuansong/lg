@@ -1,9 +1,9 @@
 package api
 
 import (
+	"github.com/duanchuansong/stk/web"
 	"github.com/gin-gonic/gin"
 	"zj/app/model"
-	"zj/pkg/web"
 )
 
 func (a *Api) Login(c *gin.Context) {

@@ -1,9 +1,9 @@
 package server
 
 import (
+	"github.com/duanchuansong/stk/web"
+	"github.com/duanchuansong/stk/xlog"
 	"net/http"
-	"zj/pkg/web"
-	"zj/pkg/xlog"
 )
 
 func StartStaticServer(cfg *web.Static) {

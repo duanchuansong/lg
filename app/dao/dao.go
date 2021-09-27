@@ -1,10 +1,10 @@
 package dao
 
 import (
+	"github.com/duanchuansong/stk/db"
 	"gorm.io/gorm"
 	"zj/app/config"
 	"zj/app/model"
-	"zj/pkg/db"
 )
 
 type Dao struct {

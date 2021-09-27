@@ -1,9 +1,9 @@
 package config
 
 import (
-	"zj/pkg/config"
-	"zj/pkg/db"
-	"zj/pkg/web"
+	"github.com/duanchuansong/stk/config"
+	"github.com/duanchuansong/stk/db"
+	"github.com/duanchuansong/stk/web"
 )
 
 type Config struct {
@@ -16,11 +16,13 @@ func New() *Config {
 	config.Init("config.toml")
 	return &Config{
 		Mysql: &db.Mysql{
-			Host:   config.GetString("mysql.host"),
-			Port:   config.GetString("mysql.port"),
-			User:   config.GetString("mysql.username"),
-			Pass:   config.GetString("mysql.password"),
-			DbName: config.GetString("mysql.dbname"),
+			Host:         config.GetString("mysql.host"),
+			Port:         config.GetString("mysql.port"),
+			User:         config.GetString("mysql.username"),
+			Pass:         config.GetString("mysql.password"),
+			DbName:       config.GetString("mysql.dbname"),
+			MaxIdleConns: config.GetInt("mysql.maxIdleConns"),
+			MaxOpenConns: config.GetInt("mysql.maxOpenConns"),
 		},
 		Http: &web.Http{
 			Port:  config.GetString("http.port"),
