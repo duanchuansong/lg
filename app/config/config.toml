@@ -14,3 +14,9 @@ debug = true
 [static]
 port = ":8083"
 dir = "./web/"
+
+[log]
+logPath="./log/"
+logFileName="log.log"
+logLevel="error"
+logOutFile=false

@@ -14,8 +14,8 @@ import (
 )
 
 func main() {
-	xlog.Init()
 	cfg := config.New()
+	xlog.Init(cfg.Log)
 	s := service.New(cfg)
 
 	httpServer := server.StartHttpServer(s)
